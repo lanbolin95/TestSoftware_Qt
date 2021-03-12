@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\shortcircuit.o
+./release\usboperation.o
+./release\drawing.o
+./release\canvas.o
+./release\element.o
+./release\moc_mainwindow.o
+./release\moc_shortcircuit.o
+./release\moc_usboperation.o
+./release\moc_drawing.o
+./release\moc_canvas.o
+);

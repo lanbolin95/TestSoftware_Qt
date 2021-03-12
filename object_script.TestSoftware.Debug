@@ -1,0 +1,14 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\shortcircuit.o
+./debug\usboperation.o
+./debug\drawing.o
+./debug\canvas.o
+./debug\element.o
+./debug\moc_mainwindow.o
+./debug\moc_shortcircuit.o
+./debug\moc_usboperation.o
+./debug\moc_drawing.o
+./debug\moc_canvas.o
+);
