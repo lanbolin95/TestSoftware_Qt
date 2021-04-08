@@ -20,6 +20,7 @@ public:
     int usb_read_page(unsigned char* pgbuf);
     int DevConnect();
     int clearUsb();
+    bool enlarge = false;
 };
 
 #endif // USBOPERATION_H

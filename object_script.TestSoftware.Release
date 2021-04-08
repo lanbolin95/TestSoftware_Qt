@@ -6,9 +6,11 @@ INPUT(
 ./release\drawing.o
 ./release\canvas.o
 ./release\element.o
+./release\enlarge.o
 ./release\moc_mainwindow.o
 ./release\moc_shortcircuit.o
 ./release\moc_usboperation.o
 ./release\moc_drawing.o
 ./release\moc_canvas.o
+./release\moc_enlarge.o
 );

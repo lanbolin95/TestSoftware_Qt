@@ -30,7 +30,8 @@ SOURCES += \
     usboperation.cpp \
     drawing.cpp \
     canvas.cpp \
-    element.cpp
+    element.cpp \
+    enlarge.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -39,11 +40,13 @@ HEADERS += \
     usboperation.h \
     drawing.h \
     canvas.h \
-    element.h
+    element.h \
+    enlarge.h
 
 FORMS += \
         mainwindow.ui \
-    shortcircuit.ui
+    shortcircuit.ui \
+    enlarge.ui
 
 LIBS += -L$$_PRO_FILE_PWD_/  -lhidapi
 

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "usboperation.h"
+#include "enlarge.h"
 
 using namespace std;
 namespace Ui {

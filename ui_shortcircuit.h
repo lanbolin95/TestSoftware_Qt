@@ -27,23 +27,24 @@ class Ui_ShortCircuit
 {
 public:
     QGridLayout *gridLayout;
-    QPushButton *CalibrationData;
+    QPushButton *ShortTest;
     QPushButton *OpenTest;
     QPushButton *StartTest;
     QPushButton *OutData;
-    QPushButton *ShortTest;
+    QPushButton *CalibrationData;
+    QPlainTextEdit *plainTextEdit;
     QPushButton *FlatnessTest;
     QPushButton *InData;
     QProgressBar *progressBar;
-    QPlainTextEdit *plainTextEdit;
     QTableView *tableView;
     QPlainTextEdit *plainTextEdit_2;
+    QPushButton *Enlarge;
 
     void setupUi(QWidget *ShortCircuit)
     {
         if (ShortCircuit->objectName().isEmpty())
             ShortCircuit->setObjectName(QStringLiteral("ShortCircuit"));
-        ShortCircuit->resize(827, 413);
+        ShortCircuit->resize(827, 560);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -51,10 +52,10 @@ public:
         ShortCircuit->setSizePolicy(sizePolicy);
         gridLayout = new QGridLayout(ShortCircuit);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        CalibrationData = new QPushButton(ShortCircuit);
-        CalibrationData->setObjectName(QStringLiteral("CalibrationData"));
+        ShortTest = new QPushButton(ShortCircuit);
+        ShortTest->setObjectName(QStringLiteral("ShortTest"));
 
-        gridLayout->addWidget(CalibrationData, 1, 0, 1, 1);
+        gridLayout->addWidget(ShortTest, 2, 0, 1, 1);
 
         OpenTest = new QPushButton(ShortCircuit);
         OpenTest->setObjectName(QStringLiteral("OpenTest"));
@@ -71,10 +72,22 @@ public:
 
         gridLayout->addWidget(OutData, 5, 0, 1, 1);
 
-        ShortTest = new QPushButton(ShortCircuit);
-        ShortTest->setObjectName(QStringLiteral("ShortTest"));
+        CalibrationData = new QPushButton(ShortCircuit);
+        CalibrationData->setObjectName(QStringLiteral("CalibrationData"));
 
-        gridLayout->addWidget(ShortTest, 2, 0, 1, 1);
+        gridLayout->addWidget(CalibrationData, 1, 0, 1, 1);
+
+        plainTextEdit = new QPlainTextEdit(ShortCircuit);
+        plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
+        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(plainTextEdit->sizePolicy().hasHeightForWidth());
+        plainTextEdit->setSizePolicy(sizePolicy1);
+        plainTextEdit->setTabStopWidth(80);
+        plainTextEdit->setCursorWidth(1);
+
+        gridLayout->addWidget(plainTextEdit, 8, 0, 1, 1);
 
         FlatnessTest = new QPushButton(ShortCircuit);
         FlatnessTest->setObjectName(QStringLiteral("FlatnessTest"));
@@ -93,31 +106,24 @@ public:
         progressBar->setInvertedAppearance(false);
         progressBar->setTextDirection(QProgressBar::TopToBottom);
 
-        gridLayout->addWidget(progressBar, 9, 1, 1, 1);
-
-        plainTextEdit = new QPlainTextEdit(ShortCircuit);
-        plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
-        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(plainTextEdit->sizePolicy().hasHeightForWidth());
-        plainTextEdit->setSizePolicy(sizePolicy1);
-        plainTextEdit->setTabStopWidth(80);
-        plainTextEdit->setCursorWidth(1);
-
-        gridLayout->addWidget(plainTextEdit, 7, 0, 1, 1);
+        gridLayout->addWidget(progressBar, 10, 1, 1, 1);
 
         tableView = new QTableView(ShortCircuit);
         tableView->setObjectName(QStringLiteral("tableView"));
 
-        gridLayout->addWidget(tableView, 0, 1, 9, 1);
+        gridLayout->addWidget(tableView, 0, 1, 10, 1);
 
         plainTextEdit_2 = new QPlainTextEdit(ShortCircuit);
         plainTextEdit_2->setObjectName(QStringLiteral("plainTextEdit_2"));
         sizePolicy1.setHeightForWidth(plainTextEdit_2->sizePolicy().hasHeightForWidth());
         plainTextEdit_2->setSizePolicy(sizePolicy1);
 
-        gridLayout->addWidget(plainTextEdit_2, 8, 0, 1, 1);
+        gridLayout->addWidget(plainTextEdit_2, 9, 0, 1, 1);
+
+        Enlarge = new QPushButton(ShortCircuit);
+        Enlarge->setObjectName(QStringLiteral("Enlarge"));
+
+        gridLayout->addWidget(Enlarge, 7, 0, 1, 1);
 
 
         retranslateUi(ShortCircuit);
@@ -128,13 +134,14 @@ public:
     void retranslateUi(QWidget *ShortCircuit)
     {
         ShortCircuit->setWindowTitle(QApplication::translate("ShortCircuit", "\346\225\260\346\215\256\346\265\213\350\257\225", Q_NULLPTR));
-        CalibrationData->setText(QApplication::translate("ShortCircuit", "\346\240\241\351\252\214\346\225\260\346\215\256", Q_NULLPTR));
+        ShortTest->setText(QApplication::translate("ShortCircuit", "\347\237\255\350\267\257\346\225\260\346\215\256", Q_NULLPTR));
         OpenTest->setText(QApplication::translate("ShortCircuit", "\345\274\200\350\267\257\346\225\260\346\215\256", Q_NULLPTR));
         StartTest->setText(QApplication::translate("ShortCircuit", "\345\274\200\345\247\213\346\265\213\350\257\225", Q_NULLPTR));
         OutData->setText(QApplication::translate("ShortCircuit", "\345\257\274\345\207\272\346\225\260\346\215\256", Q_NULLPTR));
-        ShortTest->setText(QApplication::translate("ShortCircuit", "\347\237\255\350\267\257\346\225\260\346\215\256", Q_NULLPTR));
+        CalibrationData->setText(QApplication::translate("ShortCircuit", "\346\240\241\351\252\214\346\225\260\346\215\256", Q_NULLPTR));
         FlatnessTest->setText(QApplication::translate("ShortCircuit", "\345\271\263\346\225\264\345\272\246\346\225\260\346\215\256", Q_NULLPTR));
         InData->setText(QApplication::translate("ShortCircuit", "\345\257\274\345\205\245\346\225\260\346\215\256", Q_NULLPTR));
+        Enlarge->setText(QApplication::translate("ShortCircuit", "\346\224\276\345\244\247", Q_NULLPTR));
     } // retranslateUi
 
 };

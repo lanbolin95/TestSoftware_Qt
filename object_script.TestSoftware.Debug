@@ -6,9 +6,11 @@ INPUT(
 ./debug\drawing.o
 ./debug\canvas.o
 ./debug\element.o
+./debug\enlarge.o
 ./debug\moc_mainwindow.o
 ./debug\moc_shortcircuit.o
 ./debug\moc_usboperation.o
 ./debug\moc_drawing.o
 ./debug\moc_canvas.o
+./debug\moc_enlarge.o
 );

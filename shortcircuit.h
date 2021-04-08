@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QStandardItemModel>
 #include "usboperation.h"
+#include "enlarge.h"
 
 namespace Ui {
 class ShortCircuit;
@@ -45,12 +46,18 @@ private slots:
 
     void keyPressEvent(QKeyEvent *e);
 
+    void on_Enlarge_clicked();
+
+    void on_tableView_clicked(const QModelIndex &index);
+
 private:
     Ui::ShortCircuit *ui;
 
     UsbOperation *usbOpera;
 
     QStandardItemModel *standItemModel;
+
+    enlarge *Enlarge;
 //    QStandardItemModel *theModel;
 };
 

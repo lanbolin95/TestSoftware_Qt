@@ -18,6 +18,7 @@ unsigned char p2[15000];
 unsigned char p4[15000];
 int ColumnCount = 10,RowCount = 10;
 int InDataFlag = 0;
+int enlargeNum = 0;
 
 ShortCircuit::ShortCircuit(QWidget *parent) :
     QDialog(parent),
@@ -72,15 +73,15 @@ void ShortCircuit::MakingTables(int ColumnCount, int RowCount)
     ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
     for(int i = 0; i < ColumnCount; i++){
-        ui->tableView->setColumnWidth(i,20);
+        ui->tableView->setColumnWidth(i,25);
     }
     for(int i = 0; i < RowCount; i++){
-        ui->tableView->setRowHeight(i,20);
+        ui->tableView->setRowHeight(i,25);
     }
 
-    ui->tableView->setFont(QFont("song", 4));
-    ui->tableView->horizontalHeader()->setFont(QFont("song",4));
-    ui->tableView->horizontalHeader()->setMaximumHeight(20);
+    ui->tableView->setFont(QFont("song", 6));
+    ui->tableView->horizontalHeader()->setFont(QFont("song",6));
+    ui->tableView->horizontalHeader()->setMaximumHeight(25);
 }
 
 bool ShortCircuit::saveBinaryFile(QString &aFileName)
@@ -592,5 +593,22 @@ void ShortCircuit::keyPressEvent(QKeyEvent *e)
         ui->FlatnessTest->show();
         ui->ShortTest->show();
         ui->OpenTest->show();
+    }
+}
+
+void ShortCircuit::on_Enlarge_clicked()
+{
+    enlargeNum++;
+    Enlarge = new enlarge(this);
+    Enlarge->show();
+}
+
+void ShortCircuit::on_tableView_clicked(const QModelIndex &index)
+{
+    Q_UNUSED(index);
+
+    if(enlargeNum > 0)
+    {
+        Enlarge->Enlarge();
     }
 }
